@@ -1,0 +1,68 @@
+site_name: Rupin Hardware Docs
+site_description: Technical documentation for Rupin home automation hardware
+site_url: https://otomator-technologies.github.io/rupin-docs
+repo_url: https://github.com/Otomator-Technologies/rupin-docs
+repo_name: rupin-docs
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - md_in_html
+  - tables
+  - footnotes
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - Onboarding: onboarding.md
+  - System Architecture: architecture/index.md
+  - Boards:
+    - boards/index.md
+    - RP-TS1H16A: boards/RP-TS1H16A.md
+    - RP-TS2S10A: boards/RP-TS2S10A.md
+    - RP-FR3SP: boards/RP-FR3SP.md
+    - RP-CN2PW: boards/RP-CN2PW.md
+    - RP-CN6PW: boards/RP-CN6PW.md
+  - Design Guidelines: guidelines/index.md
+  - Calculations: calculations/index.md
